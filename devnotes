@@ -1,0 +1,67 @@
+Notes by Dex
+
+File contained in the following location sudo nano /etc/supervisor/conf.d/myauth.conf - acts as a restraint configuration file
+for celery, which is a python based worker function which was configured to run on a server that has around 8gig of ram - reduced these worke>
+
+Subsequently I strongly recommend we work towards a modernization of enviroment, dockerize and offload functions to free services.
+
+Cloud Flare for Reverse Proxy functions (offload SSL responsiblity as it would appear cert bot is on here)
+
+Add static files to edge nodes for instant responses
+
+SEAT perhaps?
+
+Dev tools deployed for performance monitoring (dont know a great deal about AWS to conclude as of yet)
+
+Modernization of database? (Himo a better choice in that case)
+
+# Alliance Auth Documentation
+
+By Will Francis
+
+
+## Introduction
+
+Implemenation of the Alliance Auth toolkit for Eve Online.  This is meant as a means to track information for players.
+
+## Setup
+
+This is meant to set up and establish a Docker version of the application.  It allows for more isloation.
+
+### Information about OLD Install
+
+The old install is using a baremetal desing which has most of things dispersed around the system.  We will want to make sure nginx is off, as well as other tooling is disabled
+It is scattered around things from /var/www/auth to /opt/ and /home/ etc.  So, we need to clean up the System and make sure that the database is properly migrated over.
+
+[TODO] list more information
+
+### Installation of Docker
+
+```bash
+# Add Docker's official GPG key:
+sudo apt update
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+### PreSteps for AA-Docker
+
+[TODO: Fill out]
+
+## Tasks to Do
