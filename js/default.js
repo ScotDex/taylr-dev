@@ -288,7 +288,6 @@
             break;
         } //end switch
         var latlng = new google.maps.LatLng($('#maps').data('lat'), $('#maps').data('lon')); 
-        var styles = [
             {
                 "featureType": "landscape",
                 "stylers": [
