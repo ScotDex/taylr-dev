@@ -16,20 +16,20 @@
             $('.modal-form').removeClass('show');
             e.preventDefault();
         });
-        // /*Validation*/  
-        // $("#contactform").validate({
-        //     submitHandler: function(form) {
-        //         $(form).ajaxSubmit();
-        //         $(form).find('.formSent').show();
-        //     }
-        // });
-        // /*Validation*/  
-        // $("#contact-project").validate({
-        //     submitHandler: function(form) {
-        //         $(form).ajaxSubmit();
-        //         $(form).find('.formSent').show();
-        //     }
-        // });
+        /*Validation*/  
+        $("#contactform").validate({
+            submitHandler: function(form) {
+                $(form).ajaxSubmit();
+                $(form).find('.formSent').show();
+            }
+        });
+        /*Validation*/  
+        $("#contact-project").validate({
+            submitHandler: function(form) {
+                $(form).ajaxSubmit();
+                $(form).find('.formSent').show();
+            }
+        });
 
         $('.folio-project').on('click', function() {
             var href = $(this).attr('href');
