@@ -23,16 +23,8 @@ Complete ground-up rebuild of the Blank-Space EVE Online corporation landing pag
 - **New:** Cloudflare handles SSL termination automatically
 - **Result:** No certificate renewal management required
 
-### DNS
-- CNAME configured to point `taylr.space` at Cloudflare Workers endpoint
-- OG tags added for Discord/social share previews
-- Favicon configured via R2 edge URL
-
 ### TO DO
-
-- CNAME change to repoint to workers
 - Caching headers to be configured
-- Zipped the landing page - will assign to github and assign to corp.
 
 ---
 
@@ -75,18 +67,6 @@ Complete ground-up rebuild of the Blank-Space EVE Online corporation landing pag
 - YouTube background player (no video embed on page)
 - `lang="es"` incorrect language attribute corrected to `lang="en"`
 
-### File Structure
-```
-/
-├── index.html          # Clean semantic HTML, Bootstrap 5 classes
-├── style.css           # All visual styling, CSS custom properties
-├── js/
-│   └── main.js         # Vanilla JS — loader, nav scroll, Swiper init
-└── images/
-    └── logo.png        # Local logo assets (slider images on R2)
-```
-
----
 
 ## Technical Modernisation
 
@@ -117,14 +97,7 @@ Complete ground-up rebuild of the Blank-Space EVE Online corporation landing pag
 - No render-blocking jQuery plugin chain
 - Page load no longer depends on 13 sequential script evaluations
 
----
 
-## Deployment
-
-Auto-deploys via Cloudflare Pages on every push to `main` branch. No build step — static files served directly.
-
-```
-git push origin main → Cloudflare Pages build → Live at taylr.space
 
 ```
 
